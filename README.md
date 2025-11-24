@@ -4,7 +4,7 @@ Hammerspace Autodeployment Script for KVM-based cluster deployment
 
 
 
-to deploy a cluster you need to have a hammerspace qcow2 image an installer.yaml
+to deploy a cluster you need to have a hammerspace qcow2 image and the installer.yaml
 
 the exact names of this files is defined in the deploy.sh script
 
