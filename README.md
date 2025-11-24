@@ -1,7 +1,6 @@
-#############################################
-#  Hammerspace Autodeployment Script        #
-#  for KVM-based cluster deployment         #
-#############################################
+
+Hammerspace Autodeployment Script for KVM-based cluster deployment
+
 
 to deploy a cluster you need to have a hammerspace qcow2 image an installer.yaml
 
