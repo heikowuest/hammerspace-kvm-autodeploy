@@ -1,0 +1,53 @@
+---
+cluster:
+  dns_servers:
+    - 10.49.101.3,10.49.101.4
+  domainname: kaiko.ai
+  gateway:
+    ipv4_default: 10.49.101.254
+  ntp_servers:
+    - 10.49.101.17
+  password: TopSecret1! # There needs to be at least one non alphanumeric character
+
+node_index: "0" # This is what will determine wich node spec to use.
+nodes:
+  "0":
+    features:
+      - metadata # Metadata will tell the node that it's an Anvil
+    ha_mode: Standalone # This can be Primary, Secondary, or Standalone
+    hostname: hs-anvil
+    networks:
+      eth0:
+        dhcp: false
+        ips:
+          - 10.49.101.31/24
+        roles:
+          - data #Data is for prod traffic
+          - ha
+          - mgmt
+        mtu: 1500
+    recover: false
+    storage:
+      options:
+        - raid0
+  "1":
+    features:
+      - storage
+      - portal
+    hostname: hs-dsx
+    networks:
+      eth0:
+        cluster_ips:
+          - 10.49.101.31
+        dhcp: false
+        ips:
+          - 10.49.101.32/24
+        roles:
+          - data
+          - mgmt
+        mtu: 1500
+    recover: false
+    storage:
+      options:
+        - raid0
+version: "1"
