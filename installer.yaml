@@ -2,7 +2,7 @@
 cluster:
   dns_servers:
     - 10.49.101.3,10.49.101.4
-  domainname: kaiko.ai
+  domainname: hammerspace.com
   gateway:
     ipv4_default: 10.49.101.254
   ntp_servers:
@@ -15,7 +15,7 @@ nodes:
     features:
       - metadata # Metadata will tell the node that it's an Anvil
     ha_mode: Standalone # This can be Primary, Secondary, or Standalone
-    hostname: hs-anvil
+    hostname: hs-anvil1
     networks:
       eth0:
         dhcp: false
@@ -34,7 +34,7 @@ nodes:
     features:
       - storage
       - portal
-    hostname: hs-dsx
+    hostname: hs-dsx1
     networks:
       eth0:
         cluster_ips:
